@@ -6,6 +6,12 @@ and exposes a simpler API.
 
 Only works in `isCordova` (client)
 
+Only works while the Cordova app is open and running in the Foreground...
+
+*Want [Geolocation while the application is in the
+background](https://github.com/zeroasterisk/meteor-cordova-geolocation-background)?*
+
+
 ## How it Works
 
 1. Meteor build Cordova with this Plugin
