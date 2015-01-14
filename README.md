@@ -4,6 +4,12 @@ This is a Meteor Smart Package which installs the
 [Cordova Geolocation Plugin](http://plugins.cordova.io/#/package/org.apache.cordova.geolocation)
 and exposes a simpler API.
 
+> **NOTE: you are probably better off with 
+> [mdg:geolocation](https://github.com/meteor/mobile-packages/tree/master/packages/mdg:geolocation)
+> or accessing `navigator.geolocation.watchPosition(onPosition, onError, options);` directly.**
+>
+> *This is here as an experiment/project/reference/resource.*
+
 Only works in `isCordova` (client)
 
 Only works while the Cordova app is open and running in the Foreground...
@@ -30,7 +36,7 @@ It works by seting a reactive variable with the location and watching geolocatio
 requires Meteor 0.9.2+
 
 ```
-meteor add zeroasterisk:meteor-cordova-geolocation-background
+meteor add zeroasterisk:meteor-cordova-geolocation-foreground
 ```
 
 ## Example Usage
