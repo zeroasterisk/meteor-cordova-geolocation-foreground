@@ -62,7 +62,8 @@ GeolocationFG.watch = function(onSuccess, timeout, options) {
   if (!_.isFunction(onSuccess)) {
     throw new Meteor.Error(500, 'GeolocationFG.watch onSuccess is not a function');
   }
-  if (!_.isInt(timeout)) {
+  //check if timeout is an integer
+  if ( !(parseInt(timeout, 10) == timeout) ) {
     timeout = 30000;
   }
   if (!_.isObject(options)) {
