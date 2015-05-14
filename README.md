@@ -1,31 +1,23 @@
-# Meteor + Cordova get Geolocation in Foreground
+# Meteor get Geolocation in Foreground
 
-This is a Meteor Smart Package which installs the
-[Cordova Geolocation Plugin](http://plugins.cordova.io/#/package/org.apache.cordova.geolocation)
-and exposes a simpler API.
+This is a Meteor Package which does some basic wrapping for Geolocation.
 
-> **NOTE: you are probably better off with
-> [mdg:geolocation](https://github.com/meteor/mobile-packages/tree/master/packages/mdg:geolocation)
-> or accessing `navigator.geolocation.watchPosition(onPosition, onError, options);` directly.**
->
-> *This is here as an experiment/project/reference/resource.*
+NOTE there is an excellent
+[mdg:geolocation](https://github.com/meteor/mobile-packages/tree/master/packages/mdg:geolocation)
+package which does some similar wrapping and may be easier to implement.
 
-On the other hand - this package gives you the ability to turn off background
-watching and to do a single check vs. Swatting up a watcher.
+Geolocation is pretty simple anyway and it might be easy enough for you to
+write your own implementation for `navigator.geolocation.watchPosition(onPosition, onError, options);`
 
-Only works in `isCordova` (client)
+## Features
 
-Only works while the Cordova app is open and running in the Foreground...
+* ability to start and stop a "watcher"
+* similar api to [zeroasterisk:cordova-geolocation-background](https://github.com/zeroasterisk/meteor-cordova-geolocation-background)
 
-*Want [Geolocation while the application is in the
-background](https://github.com/zeroasterisk/meteor-cordova-geolocation-background)?*
+Want
+[Geolocation while the application is in the background](https://github.com/zeroasterisk/meteor-cordova-geolocation-background)?
 
 See an [example application using it here](https://github.com/zeroasterisk/meteor-cordova-geolocation-example).
-
-## How it Works
-
-1. Meteor build Cordova with this Plugin
-2. Meteor Client gets Geolocation or starts watching it
 
 ## Alternatives
 
@@ -40,7 +32,7 @@ It works by setting a reactive variable with the location and watching geolocati
 requires Meteor 0.9.2+
 
 ```
-meteor add zeroasterisk:meteor-cordova-geolocation-foreground
+meteor add zeroasterisk:cordova-geolocation-foreground
 ```
 
 ## Example Usage
